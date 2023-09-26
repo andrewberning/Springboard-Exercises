@@ -1,0 +1,4 @@
+.line {
+  color: gray;
+  text-decoration: line-through red 0.2rem;
+}
