@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part2 - Movies App</title>
+</head>
+
+<body>
+
+  <h1>Movies App</h1>
+
+  <form id="movie-form" action="">
+    <label for="movie-title">Movie Title: </label>
+    <input type="text" id="movie-title">
+    <br>
+    <label for="movie-rating">Movie Rating: </label>
+    <input type="number" id="movie-rating" min="0" max="10" value="0">
+    <br>
+    <input type="submit" id="submit-btn" value="submit">
+  </form>
+
+  <div id="movie-list">
+    <h2>MOVIES LIST</h2>
+    <div id="movie-list-container"></div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    const movieInput = $("#movie-title");
+    const movieRatingInput = $("#movie-rating");
+
+    $(function () {
+      console.log("DOM content loaded");
+
+      $("#submit-btn").on("click", function (e) {
+        // prevent default of submit
+        e.preventDefault();
+
+        // if the movie title value length is less than 2 characters, alert
+        if (movieInput.val().length < 2) {
+          alert("Needs to be longer than 1 character. Try again.")
+          clearForm();
+          return;
+        }
+
+        // if the movie rating value is less than 0 or greater than 10, alert
+        if (movieRatingInput.val() > 10 || movieRatingInput.val() < 0) {
+          alert("Rating needs to be 1-10. Try again.")
+          clearForm();
+          return;
+        }
+
+        // grab values of movie title and rating and put them in variables
+        const movieTitle = movieInput.val();
+        const movieRating = movieRatingInput.val();
+
+        // create a newItem variable that creates a new div and appends a h3, p, and button elements to the new div.
+        const newItem = $("<div class='movie-item'></div>")
+          .append("<h3 class='movie-title'>" + movieTitle + "</h3>")
+          .append("<p class='movie-rating'>" + movieRating + "</p>")
+          .append("<button class='remove-btn'>Remove</button>");
+
+        // append newItem to the movie list container
+        $("#movie-list-container").append(newItem);
+
+        // on remove buttons, add a "click" event to delete the parent of the target element
+        $(".remove-btn").on("click", function (e) {
+          e.target.parentNode.remove();
+        })
+
+        // reset form
+        clearForm();
+      })
+
+
+      function clearForm() {
+        $("#movie-form").each(function () {
+          this.reset();
+        })
+      }
+
+    });
+
+  </script>
+</body>
+
+</html>
