@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Boggle Game {% endblock %}
+
+{% block content %}
+
+<div id="boggle">
+  <div id="game-info" class="container">
+    <div id="high-score">
+      <h3>High Score</h3>
+      <p>
+        <b>{{ highscore }}</b>
+        in {{ nplays }} plays
+      </p>
+    </div>
+
+    <div id="current-score">
+      <h3>Current Score</h3>
+      <p>
+        <b class="score">0</b>
+      </p>
+    </div>
+    <div id="time">
+      <h3>Time</h3>
+      <p>
+        Seconds Left: <b class="timer"></b>
+      </p>
+    </div>
+  </div>
+
+  <div id="board-container" class="container">
+    <h1>Boggle</h1>
+    <table class="board">
+      <tbody>
+        {% for row in board %}
+        <tr>
+          {% for cell in row %}
+          <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <form method="POST" class="add-word">
+      <input name="word" class="word" autocomplete="off" autofocus>
+      <button>Enter</button>
+    </form>
+
+    <p class="msg">
+      <!-- our JS will put messages here dynamically -->
+    </p>
+  </div>
+
+  <div id="words-list" class="container">
+    <h3>Words List</h3>
+
+    <ul class="words">
+      <!-- our JS will words here as they score -->
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

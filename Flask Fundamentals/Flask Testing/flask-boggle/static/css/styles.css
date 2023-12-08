@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: no-repeat center url(/static/images/wood-grain-bg2.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#boggle {
+  display: flex;
+  border-radius: 15px;
+}
+
+.container {
+  text-align: center;
+  background-color: #ddd;
+  padding: 20px;
+  width: 200px;
+}
+
+#game-info {
+  border: 3px solid black;
+  border-radius: 15px 0 0 15px;
+}
+
+#board-container {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#board-container h1 {
+  padding-bottom: 20px;
+}
+
+#board-container p {
+  padding: 10px;
+}
+
+#words-list {
+  border: 3px solid black;
+  border-radius: 0 15px 15px 0;
+}
+
+h3 {
+  border-bottom: 3px solid black;
+  padding: 5px 0;
+}
+
+p {
+  padding: 5px;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+button {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  background-color: orange;
+  border-radius: 15px;
+}
+
+table {
+  background: rgb(241, 147, 5);
+  border: 3px solid black;
+  border-radius: 15px;
+  border-spacing: 5px;
+  width: 375px;
+  height: 375px;
+}
+
+td {
+  background: #ddd;
+  border: 3px solid black;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.words {
+  list-style: none;
+}
