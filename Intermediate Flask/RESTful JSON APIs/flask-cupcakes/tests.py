@@ -42,7 +42,7 @@ class CupcakeViewsTestCase(TestCase):
             db.session.add(cupcake)
             db.session.commit()
 
-        self.cupcake_id = cupcake.id
+        self.cupcake = cupcake
 
     def tearDown(self):
         """Clean up fouled transactions."""
@@ -60,7 +60,7 @@ class CupcakeViewsTestCase(TestCase):
             self.assertEqual(data, {
                 "cupcakes": [
                     {
-                        "id": self.cupcake_id,
+                        "id": self.cupcake.id,
                         "flavor": "TestFlavor",
                         "size": "TestSize",
                         "rating": 5,
