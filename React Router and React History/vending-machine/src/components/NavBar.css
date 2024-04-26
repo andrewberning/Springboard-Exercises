@@ -1,0 +1,22 @@
+.NavBar {
+  background-color: salmon;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.NavBar-link {
+  text-decoration: none;
+  color: black;
+  padding: 16px 100px;
+}
+
+.NavBar-link:hover{
+  cursor: pointer;
+}
+
+.active {
+  background-color: #ccc;
+  font-weight: bold;
+}
