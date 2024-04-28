@@ -1,0 +1,38 @@
+.NewColorForm {
+  height: 100vh;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.NewColorForm form {
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type=text] {
+  padding: 5px;
+}
+
+button {
+  font-size: .5em;
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}

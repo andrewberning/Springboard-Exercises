@@ -1,0 +1,22 @@
+.ColorDetails {
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ColorDetails a {
+  color: white;
+  text-decoration: none;
+}
+
+.ColorDetails-container {
+  text-align: center;
+  font-size: 4em;
+}
+
+.ColorDetails a:hover{
+  color: black;
+  background-color: white;
+}
